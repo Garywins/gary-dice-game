@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    background-color: darkgreen;
+}
+
+#container-box {
+    flex: 0 1 49%;
+    background-color: aliceblue;
+    border: 2px solid black;
+    margin: 5px;
+    text-align:center;
+}
+
+#container-item{
+    display: inline-flex;
+    margin: 10px;
+    max-width: 200px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+#container figure{
+    flex:0 0 100%;
+    text-align:center;
+}
+
+#container button{
+    flex:0 0 auto;
+    margin: 10px;
+    text-align:center;
+    background-color: orange;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px yellowgreen, 5px 5px 5px black;
+}
+#container button:hover {
+    box-shadow: 0px 4px 12px green, 5px 10px 15px black;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0) rotate(0deg);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0) rotate(-10deg);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0) rotate(5deg);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0) rotate(-5deg);
+  }
+}
+
+#pop-up{
+    width:400px;
+    padding:10px;
+    background-color: darkgreen;
+    color:white;
+    border:solid 1px black;
+    box-shadow:0px 0px 5px yellow, 5px 5px 5px black;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    opacity:0;
+    pointer-events: none;
+}
+
+#end-game-pop-up{
+    width:380px;
+    padding:10px;
+    background-color: rgb(65, 177, 65);
+    color:white;
+    border:solid 1px black;
+    box-shadow:0px 0px 5px yellow, 5px 5px 5px black;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    opacity:0;
+    pointer-events: none;
+}
+
+#end-game-btn-close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-weight: bold;
+    background-color: inherit;
+    color:inherit;
+    border:solid 1px white;
+    cursor:pointer;
+    pointer-events: all;
+}
+
+#btn-close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-weight: bold;
+    background-color: inherit;
+    color:inherit;
+    border:solid 1px white;
+    cursor:pointer;
+    pointer-events: all;
+}
+
+.player {
+    color: darkblue;
+}
+
+.opponent {
+    color: darkred;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #353535;
+    background-image: url("../images/bg-dice.jpg");
+    background-repeat: round;
+}
+
+header, footer, main, article, section {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 nav a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, p {
+    margin-top: 0;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.15em;
+}
+
+ul {
+    list-style-position:inside;
+}
+
+li {
+    font-size: 1.15em;
+    margin-bottom: 1em;
+}
+
+
+code {
+    background-color: #eeeeee;
+}
+
+.wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: lightgray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.warning {
+    padding: 16px;
+    background-color: #fdb3b3;
+}
+
+.warning p {
+    margin: 0;
+}
+
+.warning:not(.warning-no-script){
+    margin-bottom: 1em;
+}
+
+
+header {
+    background-color: darkgreen;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    line-height: 1;
+    color: aliceblue;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+form {
+    border: 1px solid #858585;
+    padding: 20px;
+    max-width: 360px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.submit {
+    margin-bottom: 0;
+}
+
+.input-group label {
+    flex: 0 0 100px;
+    font-size: 1.15em;
+    margin-right: 10px;
+}
+
+.input-group input {
+    display: block;
+    flex: 1;
+    width: 100%;
+    padding: 4px;
+    font-size: 1.15em;
+}
+
+footer {
+    padding: 20px;
+    border-top: 1px dotted #858585;
+}
+
+footer p {
+    line-height: 1;
+    margin: 0;
+}

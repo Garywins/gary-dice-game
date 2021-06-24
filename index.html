@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Dice</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <script src="scripts/jquery-3.4.1.min.js" defer="defer"></script>
+    <script src="scripts/how-to-play.js" defer="defer"></script>
+    <script src="scripts/Player.js" defer="defer"></script>
+    <script src="scripts/dice-game.js" defer="defer"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Game of Dice</h1>
+        </header>
+        <main>            
+            <section id="pop-up">
+                <h2>Welcome Player</h2>
+                <button id="btn-close">&#10005;</button>
+                <p>How to play</p>
+                <ul>
+                    <li>Click on the 'Roll Dice' button to play.</li> 
+                    <li>You have 3 rounds to score in.</li>
+                    <li>Click on the 'Roll Dice' button again to advance to the next round.</li>
+                    <li>The player that has the highest total score after the third round wins the game.</li>
+                    <li>You may also restart the game by clicking on the 'Play Again' button or refreshing the page.</li>
+                </ul>    
+            </section>
+            <section id="end-game-pop-up">
+                <h2 id="end-game">Game Over!</h2>
+                <button id="end-game-btn-close">&#10005;</button>  
+            </section>
+            <div id="container">
+                <div id="container-box">
+                    <h2 class="player">You</h2>
+                    <div id="container-item">
+                        <img src="images/red-dice-roll.gif" id="player-die-1" alt="player dice">  
+                    </div>
+                    <div id="container-item">
+                        <img src="images/red-dice-roll.gif" id="player-die-2" alt="player dice">  
+                    </div>
+                    <p>Round <span class="round-number"></span> Score: <span id="player-round"></span></p>
+                    <p>Total Score: <span id="player-total"></span></p>   
+                </div>
+                <div id="container-box">
+                    <h2 class="opponent">Opponent</h2>
+                    <div id="container-item">
+                        <img src="images/black-dice-roll.gif" id="opponent-die-1" alt="opponent dice">  
+                    </div>
+                    <div id="container-item">
+                        <img src="images/black-dice-roll.gif" id="opponent-die-2" alt="opponent dice">  
+                    </div>
+                    <p>Round <span class="round-number"></span> Score: <span id="opponent-round"></span></p>
+                    <p>Total Score: <span id="opponent-total"></span></p> 
+                </div>
+            </div>
+            <div id="container">                
+                <button id="btn-roll">Roll Dice</button>
+                <button id="btn-reset">Play Again</button>
+            </div>
+            <h3>Rules <button id="toggle" onclick="toggleRules()">Hide</button></h3>
+            
+            <ul id="rules">
+                <li>You and your opponent roll a pair of dice each round.</li>
+                <li>If any of the players two dice comes up as a 1 then the score for that round for the player is 0. 
+                    eg: if the player rolls a 6 and 1, they get a score of 0.</li>
+                <li>If the player rolls a pair of the same numbers then the player's score is the total of the two dice times 2. 
+                    eg: if the player rolls 5 and 5, they get a score of (5+5)*2=20</li>
+                <li>If the player rolls a combination of dice other than the ones mentioned above then the players score is the total value of the two dice. 
+                    eg: player rolls a 3 and 2, player gets a score of 3+2=5</li>
+                <li>The winner is decided after 3 rounds are completed.</li>
+            </ul>
+            <audio id="audio" src="/sounds/dice-shake.mp3"></audio>
+        </main>     
+        <footer>
+            © COMP 2132 - Gaurav Kapoor
+        </footer>
+    </div>
+
+</body>
+</html>
